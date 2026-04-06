@@ -173,7 +173,8 @@ src/
 
 ## Test Credentials (after running `npm run seed`)
 
-| Role |           Email    | Password |
+| Role | Email | Password |
+|---|---|---|
 | Admin | admin@finance.com | password123 |
 | Analyst | analyst@finance.com | password123 |
 | Viewer | viewer@finance.com | password123 |
