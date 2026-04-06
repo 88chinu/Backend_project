@@ -1,0 +1,22 @@
+src/
+├── config/
+│   └── db.js               MongoDB connection
+├── middleware/
+│   ├── auth.js             JWT verify + role guard
+│   └── error.js            Validation runner + global error handler
+├── models/
+│   ├── User.js             User schema
+│   └── Record.js           Financial record schema (with soft delete)
+├── routes/
+│   ├── auth.js             /api/auth
+│   ├── users.js            /api/users
+│   ├── records.js          /api/records
+│   └── dashboard.js        /api/dashboard
+├── services/
+│   ├── authService.js      Registration, login, JWT signing
+│   ├── userService.js      User CRUD
+│   ├── recordService.js    Record CRUD + filtering
+│   └── analyticsService.js MongoDB aggregations for dashboard
+├── utils/
+│   └── seed.js             Test data seeder
+└── index.js                Express app entry point

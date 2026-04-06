@@ -1,0 +1,153 @@
+{
+  "info": {
+    "name": "Finance Backend API",
+    "_postman_id": "12345-abcde",
+    "description": "API collection for Finance Backend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth - Register",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Test User\",\n  \"email\": \"test@example.com\",\n  \"password\": \"password123\",\n  \"role\": \"admin\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/auth/register",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "auth", "register"]
+        }
+      }
+    },
+    {
+      "name": "Auth - Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"admin@finance.com\",\n  \"password\": \"password123\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/auth/login",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "auth", "login"]
+        }
+      }
+    },
+    {
+      "name": "Auth - Get Profile",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer YOUR_TOKEN_HERE"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/auth/me",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "auth", "me"]
+        }
+      }
+    },
+    {
+      "name": "Users - Get All (Admin)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer YOUR_TOKEN_HERE"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/users",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "users"]
+        }
+      }
+    },
+    {
+      "name": "Records - Get All",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer YOUR_TOKEN_HERE"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/records",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "records"]
+        }
+      }
+    },
+    {
+      "name": "Records - Create (Admin)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer YOUR_TOKEN_HERE"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"amount\": 10000,\n  \"type\": \"income\",\n  \"category\": \"salary\",\n  \"date\": \"2024-01-01\",\n  \"notes\": \"Test income\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/records",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "records"]
+        }
+      }
+    },
+    {
+      "name": "Dashboard - Summary",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer YOUR_TOKEN_HERE"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/dashboard/summary",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "dashboard", "summary"]
+        }
+      }
+    }
+  ]
+}
